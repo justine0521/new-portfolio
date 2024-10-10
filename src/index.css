@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+}
+
+/* Animation for the hero section */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+.hero-img {
+  animation: slideIn 1s ease-out forwards;
+  clip-path: circle(60%);
+}
+
+.fade {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.fade .typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid white; /* Cursor color */
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  width: 0;
+}
+
+/* .no-scrollbar::-webkit-scrollbar {
+  display: none;
+} */
+
+.dark-mode {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.light-mode {
+  background-color: #e1e4fe;
+  color: black;
+}
+
+@media screen and (max-width: 990px) {
+  .maxWidth {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .hero-width {
+    height: 100vh;
+  }
+}
+
+
+
